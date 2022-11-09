@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[1:5]","start":1667848184399,"end":1667848185162,"title":"src\/test\/java\/tests\/testeQuickCharles[1:5] 16:09:44.399-16:09:45.162 POST dos usuarios"},{"id":2,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[2:13]","start":1667848185169,"end":1667848185183,"title":"src\/test\/java\/tests\/testeQuickCharles[2:13] 16:09:45.169-16:09:45.183 GET dos usuarios","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[3:21]","start":1667848185190,"end":1667848185191,"title":"src\/test\/java\/tests\/testeQuickCharles[3:21] 16:09:45.190-16:09:45.191 POST dos comandos","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[4:29]","start":1667848185196,"end":1667848185198,"title":"src\/test\/java\/tests\/testeQuickCharles[4:29] 16:09:45.196-16:09:45.198 GET dos comandos","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[5:36]","start":1667848185203,"end":1667848185203,"title":"src\/test\/java\/tests\/testeQuickCharles[5:36] 16:09:45.203-16:09:45.203 POST do token do discord","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[6:44]","start":1667848185209,"end":1667848185210,"title":"src\/test\/java\/tests\/testeQuickCharles[6:44] 16:09:45.209-16:09:45.210 GET do token do discord","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/tests\/testeHeader[1:6]","start":1666209107510,"end":1666209108259,"title":"src\/test\/java\/tests\/testeHeader[1:6] 16:51:47.510-16:51:48.259 POST dos usuarios","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/tests\/testeHeader[2:13]","start":1666209108268,"end":1666209108272,"title":"src\/test\/java\/tests\/testeHeader[2:13] 16:51:48.268-16:51:48.272 GET dos usuarios","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/tests\/testeHeader[3:19]","start":1666209108277,"end":1666209108285,"title":"src\/test\/java\/tests\/testeHeader[3:19] 16:51:48.277-16:51:48.285 POST dos comandos","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/tests\/testeHeader[4:26]","start":1666209108291,"end":1666209108294,"title":"src\/test\/java\/tests\/testeHeader[4:26] 16:51:48.291-16:51:48.294 GET dos comandos","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/tests\/testeHeader[5:32]","start":1666209108301,"end":1666209108307,"title":"src\/test\/java\/tests\/testeHeader[5:32] 16:51:48.301-16:51:48.307 POST do token do discord","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/tests\/testeHeader[6:39]","start":1666209108311,"end":1666209108318,"title":"src\/test\/java\/tests\/testeHeader[6:39] 16:51:48.311-16:51:48.318 GET do token do discord","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

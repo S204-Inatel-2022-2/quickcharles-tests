@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[1:7]","start":1667946714650,"end":1667946715464,"title":"src\/test\/java\/tests\/testeQuickCharles[1:7] 19:31:54.650-19:31:55.464 POST dos usuarios"},{"id":2,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[2:15]","start":1667946715471,"end":1667946715492,"title":"src\/test\/java\/tests\/testeQuickCharles[2:15] 19:31:55.471-19:31:55.492 GET dos usuarios","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[3:22]","start":1667946715497,"end":1667946715507,"title":"src\/test\/java\/tests\/testeQuickCharles[3:22] 19:31:55.497-19:31:55.507 GET dos usuarios com token de autorizacao invalido"},{"id":4,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[4:29]","start":1667946715512,"end":1667946715524,"title":"src\/test\/java\/tests\/testeQuickCharles[4:29] 19:31:55.512-19:31:55.524 PUT dos usuarios","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[5:36]","start":1667946715530,"end":1667946715541,"title":"src\/test\/java\/tests\/testeQuickCharles[5:36] 19:31:55.530-19:31:55.541 PUT de usuario sem passagem de parametros","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[6:42]","start":1667946715546,"end":1667946715560,"title":"src\/test\/java\/tests\/testeQuickCharles[6:42] 19:31:55.546-19:31:55.560 POST dos comandos","className":"failed"},{"id":7,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[7:49]","start":1667946715564,"end":1667946715575,"title":"src\/test\/java\/tests\/testeQuickCharles[7:49] 19:31:55.564-19:31:55.575 GET dos comandos","className":"failed"},{"id":8,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[8:55]","start":1667946715580,"end":1667946715595,"title":"src\/test\/java\/tests\/testeQuickCharles[8:55] 19:31:55.580-19:31:55.595 GET dos comandos com token de autorizacao invalido"},{"id":9,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[9:62]","start":1667946715601,"end":1667946715623,"title":"src\/test\/java\/tests\/testeQuickCharles[9:62] 19:31:55.601-19:31:55.623 PUT dos comandos","className":"failed"},{"id":10,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[10:69]","start":1667946715629,"end":1667946715639,"title":"src\/test\/java\/tests\/testeQuickCharles[10:69] 19:31:55.629-19:31:55.639 PUT de usuario sem passagem de parametros","className":"failed"},{"id":11,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[11:75]","start":1667946715645,"end":1667946715657,"title":"src\/test\/java\/tests\/testeQuickCharles[11:75] 19:31:55.645-19:31:55.657 POST do token do discord","className":"failed"},{"id":12,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[12:82]","start":1667946715663,"end":1667946715673,"title":"src\/test\/java\/tests\/testeQuickCharles[12:82] 19:31:55.663-19:31:55.673 GET do token do discord","className":"failed"},{"id":13,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[13:88]","start":1667946715679,"end":1667946715692,"title":"src\/test\/java\/tests\/testeQuickCharles[13:88] 19:31:55.679-19:31:55.692 GET do token com token de autorizacao invalido"},{"id":14,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[14:95]","start":1667946715697,"end":1667946715707,"title":"src\/test\/java\/tests\/testeQuickCharles[14:95] 19:31:55.697-19:31:55.707 PUT do token do discord","className":"failed"},{"id":15,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[15:102]","start":1667946715712,"end":1667946715718,"title":"src\/test\/java\/tests\/testeQuickCharles[15:102] 19:31:55.712-19:31:55.718 PUT de usuario sem passagem de parametros","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/tests\/testeHeader[1:6]","start":1666206651166,"end":1666206651890,"title":"src\/test\/java\/tests\/testeHeader[1:6] 16:10:51.166-16:10:51.890 POST dos usuarios"},{"id":2,"group":1,"content":"src\/test\/java\/tests\/testeHeader[2:13]","start":1666206651898,"end":1666206651913,"title":"src\/test\/java\/tests\/testeHeader[2:13] 16:10:51.898-16:10:51.913 GET dos usuarios"},{"id":3,"group":1,"content":"src\/test\/java\/tests\/testeHeader[3:19]","start":1666206651919,"end":1666206651935,"title":"src\/test\/java\/tests\/testeHeader[3:19] 16:10:51.919-16:10:51.935 GET dos comandos"},{"id":4,"group":1,"content":"src\/test\/java\/tests\/testeHeader[4:25]","start":1666206651940,"end":1666206651953,"title":"src\/test\/java\/tests\/testeHeader[4:25] 16:10:51.940-16:10:51.953 POST dos comandos","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

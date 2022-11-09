@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[1:7]","start":1667936135011,"end":1667936135983,"title":"src\/test\/java\/tests\/testeQuickCharles[1:7] 16:35:35.011-16:35:35.983 POST dos usuarios"},{"id":2,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[2:15]","start":1667936135990,"end":1667936136007,"title":"src\/test\/java\/tests\/testeQuickCharles[2:15] 16:35:35.990-16:35:36.007 GET dos usuarios"},{"id":3,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[3:21]","start":1667936136011,"end":1667936136019,"title":"src\/test\/java\/tests\/testeQuickCharles[3:21] 16:35:36.011-16:35:36.019 GET dos usuarios","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[4:28]","start":1667936136025,"end":1667936136050,"title":"src\/test\/java\/tests\/testeQuickCharles[4:28] 16:35:36.025-16:35:36.050 PUT dos usuarios"},{"id":5,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[5:35]","start":1667936136057,"end":1667936136073,"title":"src\/test\/java\/tests\/testeQuickCharles[5:35] 16:35:36.057-16:35:36.073 PUT de usuario sem passagem de parametros"},{"id":6,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[6:41]","start":1667936136079,"end":1667936136102,"title":"src\/test\/java\/tests\/testeQuickCharles[6:41] 16:35:36.079-16:35:36.102 POST dos comandos"},{"id":7,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[7:48]","start":1667936136107,"end":1667936136143,"title":"src\/test\/java\/tests\/testeQuickCharles[7:48] 16:35:36.107-16:35:36.143 GET dos comandos"},{"id":8,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[8:54]","start":1667936136150,"end":1667936136166,"title":"src\/test\/java\/tests\/testeQuickCharles[8:54] 16:35:36.150-16:35:36.166 PUT dos comandos","className":"failed"},{"id":9,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[9:61]","start":1667936136177,"end":1667936136201,"title":"src\/test\/java\/tests\/testeQuickCharles[9:61] 16:35:36.177-16:35:36.201 PUT de usuario sem passagem de parametros"},{"id":10,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[10:67]","start":1667936136209,"end":1667936136232,"title":"src\/test\/java\/tests\/testeQuickCharles[10:67] 16:35:36.209-16:35:36.232 POST do token do discord"},{"id":11,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[11:74]","start":1667936136239,"end":1667936136261,"title":"src\/test\/java\/tests\/testeQuickCharles[11:74] 16:35:36.239-16:35:36.261 GET do token do discord"},{"id":12,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[12:80]","start":1667936136268,"end":1667936136293,"title":"src\/test\/java\/tests\/testeQuickCharles[12:80] 16:35:36.268-16:35:36.293 PUT do token do discord"},{"id":13,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[13:87]","start":1667936136299,"end":1667936136318,"title":"src\/test\/java\/tests\/testeQuickCharles[13:87] 16:35:36.299-16:35:36.318 PUT de usuario sem passagem de parametros"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

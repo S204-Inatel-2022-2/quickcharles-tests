@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[1:7]","start":1667936015183,"end":1667936016385,"title":"src\/test\/java\/tests\/testeQuickCharles[1:7] 16:33:35.183-16:33:36.385 POST dos usuarios"},{"id":2,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[2:15]","start":1667936016393,"end":1667936016411,"title":"src\/test\/java\/tests\/testeQuickCharles[2:15] 16:33:36.393-16:33:36.411 GET dos usuarios"},{"id":3,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[3:21]","start":1667936016418,"end":1667936016438,"title":"src\/test\/java\/tests\/testeQuickCharles[3:21] 16:33:36.418-16:33:36.438 PUT dos usuarios"},{"id":4,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[4:28]","start":1667936016446,"end":1667936016465,"title":"src\/test\/java\/tests\/testeQuickCharles[4:28] 16:33:36.446-16:33:36.465 PUT de usuario sem passagem de parametros"},{"id":5,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[5:34]","start":1667936016471,"end":1667936016493,"title":"src\/test\/java\/tests\/testeQuickCharles[5:34] 16:33:36.471-16:33:36.493 POST dos comandos"},{"id":6,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[6:41]","start":1667936016501,"end":1667936016520,"title":"src\/test\/java\/tests\/testeQuickCharles[6:41] 16:33:36.501-16:33:36.520 GET dos comandos"},{"id":7,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[7:47]","start":1667936016527,"end":1667936016545,"title":"src\/test\/java\/tests\/testeQuickCharles[7:47] 16:33:36.527-16:33:36.545 PUT dos comandos","className":"failed"},{"id":8,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[8:54]","start":1667936016552,"end":1667936016570,"title":"src\/test\/java\/tests\/testeQuickCharles[8:54] 16:33:36.552-16:33:36.570 PUT de usuario sem passagem de parametros"},{"id":9,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[9:60]","start":1667936016578,"end":1667936016605,"title":"src\/test\/java\/tests\/testeQuickCharles[9:60] 16:33:36.578-16:33:36.605 POST do token do discord"},{"id":10,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[10:67]","start":1667936016612,"end":1667936016633,"title":"src\/test\/java\/tests\/testeQuickCharles[10:67] 16:33:36.612-16:33:36.633 GET do token do discord"},{"id":11,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[11:73]","start":1667936016641,"end":1667936016667,"title":"src\/test\/java\/tests\/testeQuickCharles[11:73] 16:33:36.641-16:33:36.667 PUT do token do discord"},{"id":12,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[12:80]","start":1667936016673,"end":1667936016693,"title":"src\/test\/java\/tests\/testeQuickCharles[12:80] 16:33:36.673-16:33:36.693 PUT de usuario sem passagem de parametros"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

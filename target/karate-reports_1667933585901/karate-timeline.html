@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[1:7]","start":1667931059531,"end":1667931060441,"title":"src\/test\/java\/tests\/testeQuickCharles[1:7] 15:10:59.531-15:11:00.441 POST dos usuarios"},{"id":2,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[2:15]","start":1667931060446,"end":1667931060460,"title":"src\/test\/java\/tests\/testeQuickCharles[2:15] 15:11:00.446-15:11:00.460 GET dos usuarios","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[3:21]","start":1667931060466,"end":1667931060482,"title":"src\/test\/java\/tests\/testeQuickCharles[3:21] 15:11:00.466-15:11:00.482 PUT dos usuarios","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[4:28]","start":1667931060492,"end":1667931060516,"title":"src\/test\/java\/tests\/testeQuickCharles[4:28] 15:11:00.492-15:11:00.516 POST dos comandos","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[5:35]","start":1667931060527,"end":1667931060550,"title":"src\/test\/java\/tests\/testeQuickCharles[5:35] 15:11:00.527-15:11:00.550 GET dos comandos","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[6:41]","start":1667931060560,"end":1667931060581,"title":"src\/test\/java\/tests\/testeQuickCharles[6:41] 15:11:00.560-15:11:00.581 POST do token do discord","className":"failed"},{"id":7,"group":1,"content":"src\/test\/java\/tests\/testeQuickCharles[7:48]","start":1667931060586,"end":1667931060606,"title":"src\/test\/java\/tests\/testeQuickCharles[7:48] 15:11:00.586-15:11:00.606 GET do token do discord","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
